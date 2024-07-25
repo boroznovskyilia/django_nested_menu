@@ -30,7 +30,7 @@
 
 ## Запуск приложения
 1) скачать репозиторй:
-    git clone https://github.com/yourusername/django_nested_menu.git
+    git clone https://github.com/boroznovskyilia/django_nested_menu.git
 2) создать venv
     cd django_nested_menu
     python -m venv venv
