@@ -1,0 +1,17 @@
+{% load menu_tags %}
+<ul>
+    {% for menu in result_menus %}
+    <p>{{menu.depth}}</p>
+    <li>
+        {% for i in menu.tree_depth|get_range %}
+           <ul><li>
+        {% endfor %}
+        <a href="{% url 'detail_menu' menu_url=menu.url %}" {% if menu.url == current_url %}class="active"{% endif %}>
+            {{ menu.name }}
+        </a>
+        {% for i in menu.tree_depth|get_range %}
+            </li></ul>
+        {% endfor %}
+    </li>
+    {% endfor %}
+</ul>

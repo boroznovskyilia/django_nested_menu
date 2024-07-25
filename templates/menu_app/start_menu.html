@@ -1,0 +1,20 @@
+<ul>
+    {% for item in top_level_items %}
+        <li>
+            <a href="{% url 'detail_menu' menu_url=item.url %}" {% if current_url == item.url %}class="active"{% endif %}>
+                {{ item.name }}
+            </a>
+            {% if item.children.exists %}
+                <ul>
+                    {% for child in item.children.all %}
+                        <li>
+                            <a href="{% url 'detail_menu' menu_url=child.url %}">
+                                {{ child.name }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
